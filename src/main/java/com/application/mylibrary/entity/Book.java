@@ -45,7 +45,7 @@ public class Book {
 
 
     //methods for bidirectional relationship:
-    
+
     public void removePublisher(Publisher publisher){
         this.publishers.remove(publisher);
         publisher.getBooks().remove(publisher);
