@@ -19,6 +19,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "isbn", length = 50, nullable = false, unique = true)
+    private String isbn;
+
     @Column(name = "name", length = 50, nullable = false)
     private String name;
 
@@ -43,8 +46,13 @@ public class Book {
             inverseJoinColumns = {@JoinColumn(name = "publisher_id")})
     private Set<Publisher> publishers = new HashSet<Publisher>();
 
+    public Book(String isbn, String name, String description) {
+        this.isbn = isbn;
+        this.name = name;
+        this.description = description;
+    }
 
-    //methods for bidirectional relationship:
+//methods for bidirectional relationship:
 
     public void removePublisher(Publisher publisher){
         this.publishers.remove(publisher);
