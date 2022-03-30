@@ -20,7 +20,6 @@ public class MylibraryApplication {
         @Bean
         public CommandLineRunner initialCreate (BookService bookService){
             return (args) -> {
-
                 Book book1 = new Book("ABC", "Book1 name", "My first book");
                 Author author1 = new Author("Test name 1", "Test description");
                 Category category1 = new Category("category1");
