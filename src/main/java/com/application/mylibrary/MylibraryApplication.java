@@ -17,31 +17,32 @@ public class MylibraryApplication {
         SpringApplication.run(MylibraryApplication.class, args);
     }
 
-        @Bean
-        public CommandLineRunner initialCreate (BookService bookService){
-            return (args) -> {
-                Book book1 = new Book("ABC", "Book1 name", "My first book");
-                Author author1 = new Author("Test name 1", "Test description");
-                Category category1 = new Category("category1");
-                Publisher publisher1 = new Publisher("First Publisher");
-                book1.addAuthor(author1);
-                book1.addCategory(category1);
-                book1.addPublisher(publisher1);
-                bookService.createBook(book1);
 
-                Book book2 = new Book("ABC1", "Book2 name", "My second book");
-                Author author2 = new Author("Test name 2", "Test description");
-                Category category2 = new Category("category2");
-                Publisher publisher2 = new Publisher("Second Publisher");
+    @Bean
+    public CommandLineRunner initialCreate(BookService bookService) {
+        return (args) -> {
+            Book book1 = new Book("978-0-385-34994-9", "Lean In: Women, Work and the Will to Lead", "The book challenges us to change the conversation from what women can’t do to what we can do, and serves as a rallying cry for us to work together to create a more equal world.");
+            Author author1 = new Author("Sheryl Sandberg", "Sheryl Sandberg is chief operating officer at Meta. ");
+            Category category1 = new Category("Memoir");
+            Publisher publisher1 = new Publisher("Alfred A. Knopf");
+            book1.addAuthor(author1);
+            book1.addCategory(category1);
+            book1.addPublisher(publisher1);
+            bookService.createBook(book1);
+
+                Book book2 = new Book("978-0-525-55538-4", "Turtles All the Way Down", "At its heart is Aza Holmes, a young woman navigating daily existence within the ever-tightening spiral of her own thoughts.");
+                Author author2 = new Author("John Green", "John Michael Green is an American author, YouTube content creator, and podcaster. He won the 2006 Printz Award for his debut novel, Looking for Alaska");
+                Category category2 = new Category("Novel");
+                Publisher publisher2 = new Publisher("Dutton Books");
                 book2.addAuthor(author2);
                 book2.addCategory(category2);
                 book2.addPublisher(publisher2);
                 bookService.createBook(book2);
 
-                Book book3 = new Book("ABC21", "Book3 name", "My third book");
-                Author author3 = new Author("Test name 3", "Test description");
-                Category category3 = new Category("category3");
-                Publisher publisher3 = new Publisher("Third Publisher");
+                Book book3 = new Book("0141321873 ", "My Family and Other Animals", "It tells in an exaggerated and sometimes fictionalised way of the years that he lived as a child with his siblings and widowed mother on the Greek island of Corfu between 1935 and 1939.");
+                Author author3 = new Author("Gerald Durrell.", "British naturalist, writer, zookeeper, conservationist, and television presenter.");
+                Category category3 = new Category("Autobiography");
+                Publisher publisher3 = new Publisher("Rupert Hart-Davis");
                 book3.addAuthor(author3);
                 book3.addCategory(category3);
                 book3.addPublisher(publisher3);
